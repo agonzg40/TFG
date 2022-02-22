@@ -120,7 +120,7 @@ class audioSubscriber(Node):
         for word, tag in tagger.tag(tokens):
             print(word, '->', tag)
             
-            if(tag == "VB" or tag == "VBD" and word != "search" and word != "take" and word != "place" and word != "bring"):
+            if(tag == "VB" or tag == "VBD" and word != "search" and word != "take" and word != "put" and word != "place" and word != "bring"):
                 i += 1
 
                 if(i==2):

@@ -13,13 +13,18 @@ class audioPublisher(Node):
     def __init__(self):
         super().__init__('audio_publisher')
         self.publisher_ = self.create_publisher(String, 'audio', 10)     # CHANGE
-        self.SpeechToString()
-        #self.prueba()
+        #self.SpeechToString()
+        self.prueba()
 
 
-    '''def prueba(self):
+    def prueba(self):
 
-        tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+        archiveAux = open("lexicon/verbs.txt","r")
+        mensaje = archiveAux.read()
+        print(mensaje)
+        archiveAux.close()
+
+        '''tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
 
         sentence = """I am here to take the tv"""
         tokens = nltk.word_tokenize(sentence)
@@ -34,7 +39,7 @@ class audioPublisher(Node):
         
 
         #for word, tag in tagger.tag(sent):
-            #print(word, '->', tag)'''
+            #print(word, '->', tag)
         
 
         #nlp = stanfordnlp.Pipeline()
