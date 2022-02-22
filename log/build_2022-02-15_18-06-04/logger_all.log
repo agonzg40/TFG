@@ -1,0 +1,121 @@
+[0.350s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.350s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f5967360ac0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=1, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f5967360ac0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f596736b070>)
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.359s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.359s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/angel/concurso-audio-practica'
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.360s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.361s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.386s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extensions ['ignore', 'ignore_ament_install']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extension 'ignore'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extension 'ignore_ament_install'
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extensions ['colcon_pkg']
+[0.387s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extension 'colcon_pkg'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extensions ['colcon_meta']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extension 'colcon_meta'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extensions ['ros']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(audio) by extension 'ros'
+[0.393s] DEBUG:colcon.colcon_core.package_identification:Package 'audio' with type 'ros.ament_python' and name 'audio'
+[0.393s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.394s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extensions ['ignore', 'ignore_ament_install']
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'ignore'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'ignore_ament_install'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extensions ['colcon_pkg']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'colcon_pkg'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extensions ['colcon_meta']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'colcon_meta'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extensions ['ros']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'ros'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extensions ['cmake', 'python']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'cmake'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'python'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extensions ['python_setup_py']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(output) by extension 'python_setup_py'
+[0.397s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.397s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.397s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.404s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.404s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.490s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'cmake_args' from command line to 'None'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'cmake_target' from command line to 'None'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'cmake_clean_cache' from command line to 'False'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'cmake_clean_first' from command line to 'False'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'cmake_force_configure' from command line to 'False'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'ament_cmake_args' from command line to 'None'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'catkin_cmake_args' from command line to 'None'
+[0.491s] Level 5:colcon.colcon_core.verb:set package 'audio' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.491s] DEBUG:colcon.colcon_core.verb:Building package 'audio' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/concurso-audio-practica/build/audio', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/concurso-audio-practica/install/audio', 'merge_install': False, 'path': '/home/angel/concurso-audio-practica/audio', 'symlink_install': False, 'test_result_base': None}
+[0.535s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.548s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.548s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/angel/concurso-audio-practica/audio' with build type 'ament_python'
+[0.549s] Level 1:colcon.colcon_core.shell:create_environment_hook('audio', 'ament_prefix_path')
+[0.574s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.575s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/concurso-audio-practica/install/audio/share/audio/hook/ament_prefix_path.ps1'
+[0.579s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/concurso-audio-practica/install/audio/share/audio/hook/ament_prefix_path.dsv'
+[0.592s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/concurso-audio-practica/install/audio/share/audio/hook/ament_prefix_path.sh'
+[0.594s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.597s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.974s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/angel/concurso-audio-practica/audio'
+[1.976s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.976s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.812s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/concurso-audio-practica/audio': PYTHONPATH=/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/audio build --build-base /home/angel/concurso-audio-practica/build/audio/build install --prefix /home/angel/concurso-audio-practica/install/audio --record /home/angel/concurso-audio-practica/build/audio/install.log --single-version-externally-managed
+[5.166s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/concurso-audio-practica/audio' returned '0': PYTHONPATH=/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/audio build --build-base /home/angel/concurso-audio-practica/build/audio/build install --prefix /home/angel/concurso-audio-practica/install/audio --record /home/angel/concurso-audio-practica/build/audio/install.log --single-version-externally-managed
+[5.169s] Level 1:colcon.colcon_core.environment:checking '/home/angel/concurso-audio-practica/install/audio' for CMake module files
+[5.175s] Level 1:colcon.colcon_core.environment:checking '/home/angel/concurso-audio-practica/install/audio' for CMake config files
+[5.176s] Level 1:colcon.colcon_core.environment:checking '/home/angel/concurso-audio-practica/install/audio/lib'
+[5.176s] Level 1:colcon.colcon_core.environment:checking '/home/angel/concurso-audio-practica/install/audio/bin'
+[5.176s] Level 1:colcon.colcon_core.environment:checking '/home/angel/concurso-audio-practica/install/audio/lib/pkgconfig/audio.pc'
+[5.176s] Level 1:colcon.colcon_core.environment:checking '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages'
+[5.176s] Level 1:colcon.colcon_core.shell:create_environment_hook('audio', 'pythonpath')
+[5.182s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/concurso-audio-practica/install/audio/share/audio/hook/pythonpath.ps1'
+[5.182s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/concurso-audio-practica/install/audio/share/audio/hook/pythonpath.dsv'
+[5.185s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/concurso-audio-practica/install/audio/share/audio/hook/pythonpath.sh'
+[5.186s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(audio)
+[5.187s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/concurso-audio-practica/install/audio/share/audio/package.ps1'
+[5.193s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/concurso-audio-practica/install/audio/share/audio/package.dsv'
+[5.194s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/concurso-audio-practica/install/audio/share/audio/package.sh'
+[5.197s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/concurso-audio-practica/install/audio/share/audio/package.bash'
+[5.201s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/concurso-audio-practica/install/audio/share/audio/package.zsh'
+[5.205s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/concurso-audio-practica/install/audio/share/colcon-core/packages/audio)
+[5.213s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.214s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.214s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.214s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[5.248s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[5.249s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[5.249s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[5.323s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[5.324s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/concurso-audio-practica/install/local_setup.ps1'
+[5.327s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/angel/concurso-audio-practica/install/_local_setup_util_ps1.py'
+[5.338s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/concurso-audio-practica/install/setup.ps1'
+[5.341s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/concurso-audio-practica/install/local_setup.sh'
+[5.342s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/angel/concurso-audio-practica/install/_local_setup_util_sh.py'
+[5.349s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/concurso-audio-practica/install/setup.sh'
+[5.351s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/concurso-audio-practica/install/local_setup.bash'
+[5.352s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/concurso-audio-practica/install/setup.bash'
+[5.366s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/concurso-audio-practica/install/local_setup.zsh'
+[5.366s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/concurso-audio-practica/install/setup.zsh'

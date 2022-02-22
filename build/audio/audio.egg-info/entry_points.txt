@@ -1,0 +1,4 @@
+[console_scripts]
+listener = audio.audioSubscriber:main
+talker = audio.audioPublisher:main
+

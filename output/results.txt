@@ -1,0 +1,2 @@
+command_1|take the box and put it on the table|MOTION()#MOTION()
+command_2|go to the kitchen and take the teacup|MOTION()#MOTION()

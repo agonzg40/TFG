@@ -1,0 +1,53 @@
+[0.000000] (-) TimerEvent: {}
+[0.000415] (audio) JobQueued: {'identifier': 'audio', 'dependencies': OrderedDict()}
+[0.000531] (audio) JobStarted: {'identifier': 'audio'}
+[0.095360] (-) TimerEvent: {}
+[0.196169] (-) TimerEvent: {}
+[0.296663] (-) TimerEvent: {}
+[0.397206] (-) TimerEvent: {}
+[0.498334] (-) TimerEvent: {}
+[0.598852] (-) TimerEvent: {}
+[0.699626] (-) TimerEvent: {}
+[0.800115] (-) TimerEvent: {}
+[0.900622] (-) TimerEvent: {}
+[1.001493] (-) TimerEvent: {}
+[1.102121] (-) TimerEvent: {}
+[1.202580] (-) TimerEvent: {}
+[1.303038] (-) TimerEvent: {}
+[1.403472] (-) TimerEvent: {}
+[1.503997] (-) TimerEvent: {}
+[1.583561] (audio) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/audio', 'build', '--build-base', '/home/angel/concurso-audio-practica/build/audio/build', 'install', '--prefix', '/home/angel/concurso-audio-practica/install/audio', '--record', '/home/angel/concurso-audio-practica/build/audio/install.log', '--single-version-externally-managed'], 'cwd': '/home/angel/concurso-audio-practica/audio', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'angel', 'SSH_AGENT_PID': '1425', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/angel/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/angel/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/angel/ros2_foxy/ros2-linux/lib', 'HOME': '/home/angel', 'OLDPWD': '/home/angel', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1247', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/angel/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'angel', 'JOURNAL_STREAM': '8:33534', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/angel/ros2_foxy/ros2-linux/lib/x86_64-linux-gnu/pkgconfig:/home/angel/ros2_foxy/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'angel', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/angel/ros2_foxy/ros2-linux/bin:/home/angel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/angel-VirtualBox:@/tmp/.ICE-unix/1474,unix/angel-VirtualBox:/tmp/.ICE-unix/1474', 'INVOCATION_ID': '73460e258c884573968a0233988fbf19', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/1a331a3a_1367_439b_b128_1697c7b0b401', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_ES.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.104', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/angel/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/angel/concurso-audio-practica/build/audio', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:/home/angel/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/angel/ros2_foxy/ros2-linux'}, 'shell': False}
+[1.604305] (-) TimerEvent: {}
+[1.706061] (-) TimerEvent: {}
+[1.806510] (-) TimerEvent: {}
+[1.906990] (-) TimerEvent: {}
+[2.007457] (-) TimerEvent: {}
+[2.068545] (audio) StdoutLine: {'line': b'running egg_info\n'}
+[2.077507] (audio) StdoutLine: {'line': b'writing ../build/audio/audio.egg-info/PKG-INFO\n'}
+[2.078635] (audio) StdoutLine: {'line': b'writing dependency_links to ../build/audio/audio.egg-info/dependency_links.txt\n'}
+[2.079336] (audio) StdoutLine: {'line': b'writing entry points to ../build/audio/audio.egg-info/entry_points.txt\n'}
+[2.079945] (audio) StdoutLine: {'line': b'writing requirements to ../build/audio/audio.egg-info/requires.txt\n'}
+[2.083827] (audio) StdoutLine: {'line': b'writing top-level names to ../build/audio/audio.egg-info/top_level.txt\n'}
+[2.107631] (-) TimerEvent: {}
+[2.188620] (audio) StdoutLine: {'line': b"reading manifest file '../build/audio/audio.egg-info/SOURCES.txt'\n"}
+[2.190695] (audio) StdoutLine: {'line': b"writing manifest file '../build/audio/audio.egg-info/SOURCES.txt'\n"}
+[2.191316] (audio) StdoutLine: {'line': b'running build\n'}
+[2.191787] (audio) StdoutLine: {'line': b'running build_py\n'}
+[2.196236] (audio) StdoutLine: {'line': b'copying audio/audioPublisher.py -> /home/angel/concurso-audio-practica/build/audio/build/lib/audio\n'}
+[2.197419] (audio) StdoutLine: {'line': b'running install\n'}
+[2.199967] (audio) StdoutLine: {'line': b'running install_lib\n'}
+[2.202718] (audio) StdoutLine: {'line': b'copying /home/angel/concurso-audio-practica/build/audio/build/lib/audio/audioPublisher.py -> /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio\n'}
+[2.204173] (audio) StdoutLine: {'line': b'byte-compiling /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio/audioPublisher.py to audioPublisher.cpython-38.pyc\n'}
+[2.207043] (audio) StdoutLine: {'line': b'running install_data\n'}
+[2.207687] (-) TimerEvent: {}
+[2.208693] (audio) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.212505] (audio) StdoutLine: {'line': b"removing '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[2.213954] (audio) StdoutLine: {'line': b'Copying ../build/audio/audio.egg-info to /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info\n'}
+[2.216695] (audio) StdoutLine: {'line': b'running install_scripts\n'}
+[2.254905] (audio) StdoutLine: {'line': b'Installing listener script to /home/angel/concurso-audio-practica/install/audio/lib/audio\n'}
+[2.255926] (audio) StdoutLine: {'line': b'Installing talker script to /home/angel/concurso-audio-practica/install/audio/lib/audio\n'}
+[2.257009] (audio) StdoutLine: {'line': b"writing list of installed files to '/home/angel/concurso-audio-practica/build/audio/install.log'\n"}
+[2.296081] (audio) CommandEnded: {'returncode': 0}
+[2.307800] (-) TimerEvent: {}
+[2.319883] (audio) JobEnded: {'identifier': 'audio', 'rc': 0}
+[2.323104] (-) EventReactorShutdown: {}
