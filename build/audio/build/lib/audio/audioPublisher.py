@@ -13,15 +13,30 @@ class audioPublisher(Node):
     def __init__(self):
         super().__init__('audio_publisher')
         self.publisher_ = self.create_publisher(String, 'audio', 10)     # CHANGE
-        #self.SpeechToString()
-        self.prueba()
+        self.SpeechToString()
+        #self.prueba()
 
 
     def prueba(self):
 
         archiveAux = open("lexicon/verbs.txt","r")
         mensaje = archiveAux.read()
-        print(mensaje)
+
+        aux = ""
+        mensajeFinal = []
+        j=0
+
+        for i in range(len(mensaje)):
+
+            if(mensaje[i]!="\n"):
+                aux += mensaje[i]
+            else:
+                mensajeFinal.append(aux)
+                j+=1
+                aux = ""
+                
+        for i in range(0,j):
+            print(mensajeFinal[i])
         archiveAux.close()
 
         '''tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])

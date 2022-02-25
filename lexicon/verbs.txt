@@ -22,7 +22,6 @@ like
 keep
 follow
 take
-put
 need
 search
 please
@@ -60,13 +59,8 @@ use
 water
 thank
 stop
-follow
 want
-do
 are
-need
-carry
-take
 listen
 can
 would

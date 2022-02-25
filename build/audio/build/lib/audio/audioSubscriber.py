@@ -37,16 +37,47 @@ class audioSubscriber(Node):
         #sentence = """I am here to take the tv"""
         tokens = nltk.word_tokenize(text.data)
 
+        archiveAux = open("lexicon/verbs.txt","r")
+        mensaje = archiveAux.read()
+
+        aux = ""
+        mensajeFinal = []
+        j=0
+
+        for i in range(len(mensaje)):
+
+            if(mensaje[i]!="\n"):
+                aux += mensaje[i]
+            else:
+                mensajeFinal.append(aux)
+                j+=1
+                aux = ""
+                
+        '''for i in range(0,j):
+            print(mensajeFinal[i])'''
+        archiveAux.close()
+
         for word, tag in tagger.tag(tokens):
-            if(tag == "VB" or tag == "VBD"):
-                counterAux += 1
+            for i in range(len(mensajeFinal)):
+                if(word == mensajeFinal[i]):
+                    print(word,"y", mensajeFinal[i])
+                    counterAux += 1
 
         if(counterAux == 1):
-            self.singleCommand(text.data)
+            self.singleCommand(text.data, mensajeFinal)
 
         elif(counterAux == 2):
-            self.composedCommand(text.data)
+            self.composedCommand(text.data, mensajeFinal)
             #LLamo al comando compuesto
+
+        elif(counterAux == 0):
+            counter[0] += 1
+            data = "BAD_RECOGNITION"
+            oration = "NO_INTERPRETATION"
+        
+            archive.write("command_%d|%s|%s\n" % (counter[0],data, oration))
+        
+        
 
         #print(tokens)
         #tagged = nltk.pos_tag(tokens)
@@ -58,7 +89,7 @@ class audioSubscriber(Node):
         #for word, tag in tagger.tag(sent):
             #print(word, '->', tag)'''
 
-    def singleCommand(self, data):
+    def singleCommand(self, data, mensajeFinal):
 
         oration = ""
 
@@ -71,28 +102,29 @@ class audioSubscriber(Node):
         print(tokens)
 
         for word, tag in tagger.tag(tokens):
-            print(word, '->', tag)
+
+            for i in range(len(mensajeFinal)):
             
-            if(tag == "VB" or tag == "VBD" and word != "search" and word != "take" and word != "place" and word != "bring"):
-                counter[0] += 1
-                print("estoy aqui")
-                oration = "MOTION("
+                if(word==mensajeFinal[i] and word != "search" and word != "take" and word != "place" and word != "bring"):
+                    counter[0] += 1
+                    print("estoy aqui")
+                    oration = "MOTION("
 
-            elif (word == "search"):
-                counter[0] += 1
-                oration = "SEARCHING("
+                elif (word == "search" and word==mensajeFinal[i]):
+                    counter[0] += 1
+                    oration = "SEARCHING("
 
-            elif (word == "take"):
-                counter[0] += 1
-                oration = "TAKING("
+                elif (word == "take" and word==mensajeFinal[i]):
+                    counter[0] += 1
+                    oration = "TAKING("
 
-            elif (word == "place" or word == "put"):
-                counter[0] += 1
-                oration = "PLACING("
+                elif (word == "place" or word == "put" and word==mensajeFinal[i]):
+                    counter[0] += 1
+                    oration = "PLACING("
 
-            elif (word == "bring"):
-                counter[0] += 1
-                oration = "BRINGING("
+                elif (word == "bring" and word==mensajeFinal[i]):
+                    counter[0] += 1
+                    oration = "BRINGING("
 
 
         if(oration == ""):
@@ -104,7 +136,7 @@ class audioSubscriber(Node):
         
         archive.write("command_%d|%s|%s\n" % (counter[0],data, oration))
 
-    def composedCommand(self, data):
+    def composedCommand(self, data, mensajeFinal):
 
         i = 0
         oration = ""
@@ -118,62 +150,63 @@ class audioSubscriber(Node):
         print(tokens)
 
         for word, tag in tagger.tag(tokens):
-            print(word, '->', tag)
             
-            if(tag == "VB" or tag == "VBD" and word != "search" and word != "take" and word != "put" and word != "place" and word != "bring"):
-                i += 1
+            for j in range(len(mensajeFinal)):
+            
+                if(word==mensajeFinal[j] and word != "search" and word != "take" and word != "put" and word != "place" and word != "bring"):
+                    i += 1
 
-                if(i==2):
-                    counter[0] += 1
-                    oration += "#"
+                    if(i==2):
+                        counter[0] += 1
+                        oration += "#"
                 
-                print("estoy aqui")
-                oration += "MOTION("
-                oration += ")"
+                    print("estoy aqui")
+                    oration += "MOTION("
+                    oration += ")"
 
-            elif (word == "search"):
-                i += 1
+                elif (word == "search" and word==mensajeFinal[j]):
+                    i += 1
 
-                if(i==2):
+                    if(i==2):
+                        counter[0] += 1
+                        oration += "#"
+
                     counter[0] += 1
-                    oration += "#"
+                    oration += "SEARCHING("
+                    oration += ")"
 
-                counter[0] += 1
-                oration += "SEARCHING("
-                oration += ")"
+                elif (word == "take" and word==mensajeFinal[j]):
+                    i += 1
 
-            elif (word == "take"):
-                i += 1
+                    if(i==2):
+                        counter[0] += 1
+                        oration += "#"
 
-                if(i==2):
                     counter[0] += 1
-                    oration += "#"
+                    oration += "TAKING("
+                    oration += ")"
 
-                counter[0] += 1
-                oration += "TAKING("
-                oration += ")"
+                elif (word == "place" or word == "put" and word==mensajeFinal[j]):
+                    i += 1
 
-            elif (word == "place" or word == "put"):
-                i += 1
+                    if(i==2):
+                        counter[0] += 1
+                        oration += "#"
 
-                if(i==2):
                     counter[0] += 1
-                    oration += "#"
+                    oration += "PLACING("
+                    oration += ")"
 
-                counter[0] += 1
-                oration += "PLACING("
-                oration += ")"
+                elif (word == "bring" and word==mensajeFinal[j]):
+                    i += 1
 
-            elif (word == "bring"):
-                i += 1
+                    if(i==2):
+                        counter[0] += 1
+                        oration += "#"
 
-                if(i==2):
                     counter[0] += 1
-                    oration += "#"
-
-                counter[0] += 1
-                oration += "BRINGING("
-                oration += ")"
+                    oration += "BRINGING("
+                    oration += ")"
 
         
 

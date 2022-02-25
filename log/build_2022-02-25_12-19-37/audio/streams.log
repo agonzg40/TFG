@@ -1,0 +1,25 @@
+[3.862s] Invoking command in '/home/angel/concurso-audio-practica/audio': PYTHONPATH=/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/audio build --build-base /home/angel/concurso-audio-practica/build/audio/build install --prefix /home/angel/concurso-audio-practica/install/audio --record /home/angel/concurso-audio-practica/build/audio/install.log --single-version-externally-managed
+[4.545s] running egg_info
+[4.546s] writing ../build/audio/audio.egg-info/PKG-INFO
+[4.547s] writing dependency_links to ../build/audio/audio.egg-info/dependency_links.txt
+[4.548s] writing entry points to ../build/audio/audio.egg-info/entry_points.txt
+[4.548s] writing requirements to ../build/audio/audio.egg-info/requires.txt
+[4.549s] writing top-level names to ../build/audio/audio.egg-info/top_level.txt
+[4.697s] reading manifest file '../build/audio/audio.egg-info/SOURCES.txt'
+[4.703s] writing manifest file '../build/audio/audio.egg-info/SOURCES.txt'
+[4.704s] running build
+[4.704s] running build_py
+[4.706s] copying audio/audioPublisher.py -> /home/angel/concurso-audio-practica/build/audio/build/lib/audio
+[4.708s] running install
+[4.709s] running install_lib
+[4.712s] copying /home/angel/concurso-audio-practica/build/audio/build/lib/audio/audioPublisher.py -> /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio
+[4.713s] byte-compiling /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio/audioPublisher.py to audioPublisher.cpython-38.pyc
+[4.722s] running install_data
+[4.725s] running install_egg_info
+[4.729s] removing '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info' (and everything under it)
+[4.730s] Copying ../build/audio/audio.egg-info to /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info
+[4.738s] running install_scripts
+[4.785s] Installing listener script to /home/angel/concurso-audio-practica/install/audio/lib/audio
+[4.786s] Installing talker script to /home/angel/concurso-audio-practica/install/audio/lib/audio
+[4.787s] writing list of installed files to '/home/angel/concurso-audio-practica/build/audio/install.log'
+[4.849s] Invoked command in '/home/angel/concurso-audio-practica/audio' returned '0': PYTHONPATH=/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/audio build --build-base /home/angel/concurso-audio-practica/build/audio/build install --prefix /home/angel/concurso-audio-practica/install/audio --record /home/angel/concurso-audio-practica/build/audio/install.log --single-version-externally-managed
