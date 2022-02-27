@@ -1,0 +1,1 @@
+command_2|go to the kitchen and take the bottle|MOTION(goal: to the kitchen )#TAKING(goal: to the kitchen , theme: the bottle )

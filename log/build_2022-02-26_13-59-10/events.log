@@ -1,0 +1,67 @@
+[0.000000] (-) TimerEvent: {}
+[0.000376] (audio) JobQueued: {'identifier': 'audio', 'dependencies': OrderedDict()}
+[0.000449] (audio) JobStarted: {'identifier': 'audio'}
+[0.095878] (-) TimerEvent: {}
+[0.196591] (-) TimerEvent: {}
+[0.297344] (-) TimerEvent: {}
+[0.399700] (-) TimerEvent: {}
+[0.500221] (-) TimerEvent: {}
+[0.600736] (-) TimerEvent: {}
+[0.701246] (-) TimerEvent: {}
+[0.802629] (-) TimerEvent: {}
+[0.903246] (-) TimerEvent: {}
+[1.003748] (-) TimerEvent: {}
+[1.104557] (-) TimerEvent: {}
+[1.205197] (-) TimerEvent: {}
+[1.305932] (-) TimerEvent: {}
+[1.406755] (-) TimerEvent: {}
+[1.507446] (-) TimerEvent: {}
+[1.607902] (-) TimerEvent: {}
+[1.708482] (-) TimerEvent: {}
+[1.809455] (-) TimerEvent: {}
+[1.910001] (-) TimerEvent: {}
+[2.010484] (-) TimerEvent: {}
+[2.113641] (-) TimerEvent: {}
+[2.214810] (-) TimerEvent: {}
+[2.315411] (-) TimerEvent: {}
+[2.415984] (-) TimerEvent: {}
+[2.516727] (-) TimerEvent: {}
+[2.617526] (-) TimerEvent: {}
+[2.718438] (-) TimerEvent: {}
+[2.819240] (-) TimerEvent: {}
+[2.860370] (audio) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../build/audio', 'build', '--build-base', '/home/angel/concurso-audio-practica/build/audio/build', 'install', '--prefix', '/home/angel/concurso-audio-practica/install/audio', '--record', '/home/angel/concurso-audio-practica/build/audio/install.log', '--single-version-externally-managed'], 'cwd': '/home/angel/concurso-audio-practica/audio', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'angel', 'SSH_AGENT_PID': '4284', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/angel/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/angel/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/angel/ros2_foxy/ros2-linux/lib', 'HOME': '/home/angel', 'OLDPWD': '/home/angel', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '4105', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/angel/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'angel', 'JOURNAL_STREAM': '8:44674', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/angel/ros2_foxy/ros2-linux/lib/x86_64-linux-gnu/pkgconfig:/home/angel/ros2_foxy/ros2-linux/lib/pkgconfig', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'angel', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/home/angel/ros2_foxy/ros2-linux/bin:/home/angel/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/angel-VirtualBox:@/tmp/.ICE-unix/4332,unix/angel-VirtualBox:/tmp/.ICE-unix/4332', 'INVOCATION_ID': '240eaf643e184c7c97e173d9f697a858', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/75495258_6c61_41e8_bb41_4ae86cb6813a', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'es_ES.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.99', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/angel/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/angel/concurso-audio-practica/build/audio', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:/home/angel/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'COLCON': '1', 'VTE_VERSION': '6003', 'CMAKE_PREFIX_PATH': '/home/angel/ros2_foxy/ros2-linux'}, 'shell': False}
+[2.920806] (-) TimerEvent: {}
+[3.021400] (-) TimerEvent: {}
+[3.121919] (-) TimerEvent: {}
+[3.222391] (-) TimerEvent: {}
+[3.322848] (-) TimerEvent: {}
+[3.330437] (audio) StdoutLine: {'line': b'running egg_info\n'}
+[3.332012] (audio) StdoutLine: {'line': b'writing ../build/audio/audio.egg-info/PKG-INFO\n'}
+[3.332778] (audio) StdoutLine: {'line': b'writing dependency_links to ../build/audio/audio.egg-info/dependency_links.txt\n'}
+[3.333725] (audio) StdoutLine: {'line': b'writing entry points to ../build/audio/audio.egg-info/entry_points.txt\n'}
+[3.334335] (audio) StdoutLine: {'line': b'writing requirements to ../build/audio/audio.egg-info/requires.txt\n'}
+[3.334955] (audio) StdoutLine: {'line': b'writing top-level names to ../build/audio/audio.egg-info/top_level.txt\n'}
+[3.423018] (-) TimerEvent: {}
+[3.461737] (audio) StdoutLine: {'line': b"reading manifest file '../build/audio/audio.egg-info/SOURCES.txt'\n"}
+[3.484127] (audio) StdoutLine: {'line': b"writing manifest file '../build/audio/audio.egg-info/SOURCES.txt'\n"}
+[3.484857] (audio) StdoutLine: {'line': b'running build\n'}
+[3.485333] (audio) StdoutLine: {'line': b'running build_py\n'}
+[3.486002] (audio) StdoutLine: {'line': b'copying audio/audioSubscriber.py -> /home/angel/concurso-audio-practica/build/audio/build/lib/audio\n'}
+[3.486761] (audio) StdoutLine: {'line': b'running install\n'}
+[3.488146] (audio) StdoutLine: {'line': b'running install_lib\n'}
+[3.490046] (audio) StdoutLine: {'line': b'copying /home/angel/concurso-audio-practica/build/audio/build/lib/audio/audioSubscriber.py -> /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio\n'}
+[3.491307] (audio) StdoutLine: {'line': b'byte-compiling /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio/audioSubscriber.py to audioSubscriber.cpython-38.pyc\n'}
+[3.495290] (audio) StdoutLine: {'line': b'running install_data\n'}
+[3.496587] (audio) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.499133] (audio) StdoutLine: {'line': b"removing '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[3.500255] (audio) StdoutLine: {'line': b'Copying ../build/audio/audio.egg-info to /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info\n'}
+[3.522107] (audio) StdoutLine: {'line': b'running install_scripts\n'}
+[3.523163] (-) TimerEvent: {}
+[3.555570] (audio) StdoutLine: {'line': b'Installing listener script to /home/angel/concurso-audio-practica/install/audio/lib/audio\n'}
+[3.557189] (audio) StdoutLine: {'line': b'Installing talker script to /home/angel/concurso-audio-practica/install/audio/lib/audio\n'}
+[3.558179] (audio) StdoutLine: {'line': b"writing list of installed files to '/home/angel/concurso-audio-practica/build/audio/install.log'\n"}
+[3.588925] (audio) CommandEnded: {'returncode': 0}
+[3.623311] (-) TimerEvent: {}
+[3.723882] (-) TimerEvent: {}
+[3.770461] (audio) JobEnded: {'identifier': 'audio', 'rc': 0}
+[3.773928] (-) EventReactorShutdown: {}

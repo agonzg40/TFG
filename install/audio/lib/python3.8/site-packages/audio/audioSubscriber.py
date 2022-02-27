@@ -1,3 +1,4 @@
+from re import T
 import rclpy
 from rclpy.node import Node
 
@@ -12,6 +13,151 @@ from nltk.tag import UnigramTagger
 
 archive=open("output/results.txt","w")
 counter = [0]
+
+#Identify if is a source or a goal
+def identify(data, verb):
+
+    archiveAux = open("lexicon/places.txt","r")
+    mensaje = archiveAux.read()
+
+    aux = ""
+    places = []
+    j=0
+
+    for i in range(len(mensaje)):
+
+        if(mensaje[i]!="\n"):
+            aux += mensaje[i]
+        else:
+            places.append(aux)
+            j+=1
+            aux = ""
+
+    tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    tokens = nltk.word_tokenize(data)
+
+    goal = ""
+    aux = []
+    aux2 = ""
+    aux3 = ""
+    boolean = False
+    coma = False
+    
+    for word, tag in tagger.tag(tokens): #Busco si se encuentra en el archivo de places
+        aux.append(word)
+        if(word!=verb):
+            for i in range(len(places)):
+                if(word == places[i]):
+                    for j in range(len (aux)):
+                        if(j > len(aux)-4):
+                            aux2 += " " + aux[j]
+                            coma = True
+
+                    goal += "goal:" + aux2 + " "
+
+    #goal += aux3
+
+    for word, tag in tagger.tag(tokens): #Busco si se encuentra en el archivo de places para saber si es objeto
+        if(word!=verb):
+            if(boolean == True):
+                for i in range(len(places)):
+                    if(word == places[i]):
+                        boolean = False
+                if(boolean == True):
+                    if(coma == True):
+                        goal += ", "
+                    goal += "theme: the " + word +" "
+                    boolean = False
+
+
+            if(word == "the"):
+                boolean = True
+
+            
+
+    return goal
+
+def addGoal(data, verb):
+
+    tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    tokens = nltk.word_tokenize(data)
+
+    goal = ""
+    
+    for word, tag in tagger.tag(tokens):
+        if(word!=verb):
+            goal += word
+            goal += " "
+
+    goal = goal[:-1]
+    return goal
+
+def identifyGoalComposed(data, verb):
+    tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    tokens = nltk.word_tokenize(data)
+
+    goal = ""
+    boolean = False
+
+    print(verb)
+    for word, tag in tagger.tag(tokens):
+        if(word == "and"):
+            boolean = False
+        if(boolean==True):
+            goal += word + " "
+        if(word==verb):
+            boolean = True
+
+    return goal
+        
+
+
+def identifyBeneficiary(data):
+
+    archiveAux = open("lexicon/personal_prononouns.txt","r")
+    mensaje = archiveAux.read()
+
+    aux = ""
+    pronouns = []
+    j=0
+
+    for i in range(len(mensaje)):
+
+        if(mensaje[i]!="\n"):
+            aux += mensaje[i]
+        else:
+            pronouns.append(aux)
+            j+=1
+            aux = ""
+
+    tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    tokens = nltk.word_tokenize(data)
+
+    goal = ""
+    
+    for word, tag in tagger.tag(tokens):
+        for i in range(len(pronouns)):
+            if(word==pronouns[i]):
+                goal += "beneficiary: " + word
+
+    return goal
+
+'''def addPlace(places):
+
+    tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    tokens = nltk.word_tokenize(data)
+
+    place = ""
+    
+    for word, tag in tagger.tag(tokens):
+        if(word!=verb):
+            place += word
+            place += " "
+
+    place = place[:-1]
+    return place'''
+
+
 
 class audioSubscriber(Node):
 
@@ -60,7 +206,7 @@ class audioSubscriber(Node):
         for word, tag in tagger.tag(tokens):
             for i in range(len(mensajeFinal)):
                 if(word == mensajeFinal[i]):
-                    print(word,"y", mensajeFinal[i])
+                    print(word)
                     counterAux += 1
 
         if(counterAux == 1):
@@ -89,17 +235,15 @@ class audioSubscriber(Node):
         #for word, tag in tagger.tag(sent):
             #print(word, '->', tag)'''
 
+    
     def singleCommand(self, data, mensajeFinal):
 
         oration = ""
-
-        print(data)
 
         tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
 
         #sentence = """I am here to take the tv"""
         tokens = nltk.word_tokenize(data)
-        print(tokens)
 
         for word, tag in tagger.tag(tokens):
 
@@ -107,24 +251,29 @@ class audioSubscriber(Node):
             
                 if(word==mensajeFinal[i] and word != "search" and word != "take" and word != "place" and word != "bring"):
                     counter[0] += 1
-                    print("estoy aqui")
-                    oration = "MOTION("
-
+                    oration = "MOTION(goal:"
+                    oration += addGoal(data, mensajeFinal[i])
+                    
                 elif (word == "search" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "SEARCHING("
+                    oration += identify(data, mensajeFinal[i])
 
                 elif (word == "take" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "TAKING("
+                    oration += identify(data, mensajeFinal[i])
 
                 elif (word == "place" or word == "put" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "PLACING("
+                    oration += identify(data, mensajeFinal[i])
 
                 elif (word == "bring" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "BRINGING("
+                    oration += identify(data, mensajeFinal[i])
+                    oration += identifyBeneficiary(data)
 
 
         if(oration == ""):
@@ -140,6 +289,7 @@ class audioSubscriber(Node):
 
         i = 0
         oration = ""
+        counterAux = 0
 
         print(data)
 
@@ -155,17 +305,27 @@ class audioSubscriber(Node):
             
                 if(word==mensajeFinal[j] and word != "search" and word != "take" and word != "put" and word != "place" and word != "bring"):
                     i += 1
+                    counterAux += 1
 
                     if(i==2):
                         counter[0] += 1
                         oration += "#"
+
+                    if(counterAux == 1):
+                        oration += "MOTION(goal: "
+                        oration += identifyGoalComposed(data, mensajeFinal[j])
+                        oration += ")"
+
+                    elif(counterAux==2):
+                        oration += "MOTION(, goal: "
+                        oration += addGoal(data, mensajeFinal[j])
+                        oration += ")"
                 
-                    print("estoy aqui")
-                    oration += "MOTION("
-                    oration += ")"
+                    
 
                 elif (word == "search" and word==mensajeFinal[j]):
                     i += 1
+                    counterAux += 1
 
                     if(i==2):
                         counter[0] += 1
@@ -173,10 +333,12 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "SEARCHING("
+                    oration += identify(data, mensajeFinal[j])
                     oration += ")"
 
                 elif (word == "take" and word==mensajeFinal[j]):
                     i += 1
+                    counterAux += 1
 
                     if(i==2):
                         counter[0] += 1
@@ -184,10 +346,12 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "TAKING("
+                    oration += identify(data, mensajeFinal[j])
                     oration += ")"
 
                 elif (word == "place" or word == "put" and word==mensajeFinal[j]):
                     i += 1
+                    counterAux += 1
 
                     if(i==2):
                         counter[0] += 1
@@ -195,10 +359,12 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "PLACING("
+                    oration += identify(data, mensajeFinal[j])
                     oration += ")"
 
                 elif (word == "bring" and word==mensajeFinal[j]):
                     i += 1
+                    counterAux += 1
 
                     if(i==2):
                         counter[0] += 1
@@ -206,6 +372,8 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "BRINGING("
+                    oration += identify(data, mensajeFinal[j])
+                    oration += identifyBeneficiary(data)
                     oration += ")"
 
         
@@ -218,6 +386,9 @@ class audioSubscriber(Node):
         
         
         archive.write("command_%d|%s|%s\n" % (counter[0],data, oration))
+
+    
+
 
         
         

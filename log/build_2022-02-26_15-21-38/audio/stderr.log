@@ -1,0 +1,5 @@
+  File "/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio/audioSubscriber.py", line 40
+    aux2 = "", aux3 = ""
+           ^
+SyntaxError: cannot assign to literal
+
