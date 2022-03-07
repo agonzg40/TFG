@@ -15,7 +15,7 @@ archive=open("output/results.txt","w")
 counter = [0]
 
 #Identify if is a source or a goal
-def identify(data, verb):
+def identify(data, verb, number):
 
     archiveAux = open("lexicon/places.txt","r")
     mensaje = archiveAux.read()
@@ -33,6 +33,30 @@ def identify(data, verb):
             j+=1
             aux = ""
 
+    dataAux = data
+    data = ""
+    copia = False
+
+    tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
+    tokens = nltk.word_tokenize(dataAux)
+
+    if(number == 1):
+        for word, tag in tagger.tag(tokens): 
+            if(word != "and"):
+                data += word
+            elif (word == "and"):
+                break
+
+    if(number == 2):
+        print("hola")
+        for word, tag in tagger.tag(tokens): 
+            if(copia == True):
+                data += word + " "
+            elif(word == "and" and copia == False):
+                copia = True
+            
+    print("eeee ", data)
+
     tagger = UnigramTagger(brown.tagged_sents(categories='news')[:500])
     tokens = nltk.word_tokenize(data)
 
@@ -42,10 +66,12 @@ def identify(data, verb):
     aux3 = ""
     boolean = False
     coma = False
+    last = False
+    next = False
     
     for word, tag in tagger.tag(tokens): #Busco si se encuentra en el archivo de places
-        aux.append(word)
         if(word!=verb):
+            aux.append(word)
             for i in range(len(places)):
                 if(word == places[i]):
                     for j in range(len (aux)):
@@ -59,16 +85,26 @@ def identify(data, verb):
 
     for word, tag in tagger.tag(tokens): #Busco si se encuentra en el archivo de places para saber si es objeto
         if(word!=verb):
-            if(boolean == True):
+            if(next == True):
+                    goal += word + " "
+                    next = False
+                    last = False
+            if(last == True and word == "of"):
+                    goal += word + " "
+                    next = True
+            if(boolean == True and last == False):
                 for i in range(len(places)):
                     if(word == places[i]):
                         boolean = False
+                
                 if(boolean == True):
                     if(coma == True):
                         goal += ", "
                     goal += "theme: the " + word +" "
                     boolean = False
+                    last = True
 
+            
 
             if(word == "the"):
                 boolean = True
@@ -212,7 +248,7 @@ class audioSubscriber(Node):
         if(counterAux == 1):
             self.singleCommand(text.data, mensajeFinal)
 
-        elif(counterAux == 2):
+        elif(counterAux >= 2):
             self.composedCommand(text.data, mensajeFinal)
             #LLamo al comando compuesto
 
@@ -249,7 +285,7 @@ class audioSubscriber(Node):
 
             for i in range(len(mensajeFinal)):
             
-                if(word==mensajeFinal[i] and word != "search" and word != "take" and word != "place" and word != "bring"):
+                if(word==mensajeFinal[i] and word != "search" and word != "take" and word != "get" and word != "grab" and word != "pick" and word != "put" and word != "place" and word != "bring"):
                     counter[0] += 1
                     oration = "MOTION(goal:"
                     oration += addGoal(data, mensajeFinal[i])
@@ -257,17 +293,17 @@ class audioSubscriber(Node):
                 elif (word == "search" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "SEARCHING("
-                    oration += identify(data, mensajeFinal[i])
+                    oration += identify(data, mensajeFinal[i], 0)
 
-                elif (word == "take" and word==mensajeFinal[i]):
+                elif (word == "take" or word == "get" or word == "grab" or word == "pick" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "TAKING("
-                    oration += identify(data, mensajeFinal[i])
+                    oration += identify(data, mensajeFinal[i], 0)
 
                 elif (word == "place" or word == "put" and word==mensajeFinal[i]):
                     counter[0] += 1
                     oration = "PLACING("
-                    oration += identify(data, mensajeFinal[i])
+                    oration += identify(data, mensajeFinal[i], 0)
 
                 elif (word == "bring" and word==mensajeFinal[i]):
                     counter[0] += 1
@@ -333,7 +369,7 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "SEARCHING("
-                    oration += identify(data, mensajeFinal[j])
+                    oration += identify(data, mensajeFinal[j], i)
                     oration += ")"
 
                 elif (word == "take" and word==mensajeFinal[j]):
@@ -346,7 +382,8 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "TAKING("
-                    oration += identify(data, mensajeFinal[j])
+                    print(i)
+                    oration += identify(data, mensajeFinal[j], i)
                     oration += ")"
 
                 elif (word == "place" or word == "put" and word==mensajeFinal[j]):
@@ -359,7 +396,7 @@ class audioSubscriber(Node):
 
                     counter[0] += 1
                     oration += "PLACING("
-                    oration += identify(data, mensajeFinal[j])
+                    oration += identify(data, mensajeFinal[j], i)
                     oration += ")"
 
                 elif (word == "bring" and word==mensajeFinal[j]):

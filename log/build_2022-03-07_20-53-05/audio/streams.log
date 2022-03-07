@@ -1,0 +1,22 @@
+[3.157s] Invoking command in '/home/angel/concurso-audio-practica/audio': PYTHONPATH=/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/audio build --build-base /home/angel/concurso-audio-practica/build/audio/build install --prefix /home/angel/concurso-audio-practica/install/audio --record /home/angel/concurso-audio-practica/build/audio/install.log --single-version-externally-managed
+[3.792s] running egg_info
+[3.795s] writing ../build/audio/audio.egg-info/PKG-INFO
+[3.796s] writing dependency_links to ../build/audio/audio.egg-info/dependency_links.txt
+[3.797s] writing entry points to ../build/audio/audio.egg-info/entry_points.txt
+[3.798s] writing requirements to ../build/audio/audio.egg-info/requires.txt
+[3.799s] writing top-level names to ../build/audio/audio.egg-info/top_level.txt
+[3.939s] reading manifest file '../build/audio/audio.egg-info/SOURCES.txt'
+[3.941s] writing manifest file '../build/audio/audio.egg-info/SOURCES.txt'
+[3.941s] running build
+[3.942s] running build_py
+[3.943s] running install
+[3.944s] running install_lib
+[3.948s] running install_data
+[3.949s] running install_egg_info
+[3.953s] removing '/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info' (and everything under it)
+[3.954s] Copying ../build/audio/audio.egg-info to /home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages/audio-0.0.0-py3.8.egg-info
+[3.973s] running install_scripts
+[4.004s] Installing listener script to /home/angel/concurso-audio-practica/install/audio/lib/audio
+[4.005s] Installing talker script to /home/angel/concurso-audio-practica/install/audio/lib/audio
+[4.007s] writing list of installed files to '/home/angel/concurso-audio-practica/build/audio/install.log'
+[4.049s] Invoked command in '/home/angel/concurso-audio-practica/audio' returned '0': PYTHONPATH=/home/angel/concurso-audio-practica/install/audio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/audio build --build-base /home/angel/concurso-audio-practica/build/audio/build install --prefix /home/angel/concurso-audio-practica/install/audio --record /home/angel/concurso-audio-practica/build/audio/install.log --single-version-externally-managed

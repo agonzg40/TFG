@@ -1,1 +1,1 @@
-command_2|go to the kitchen and take the bottle|MOTION(goal: to the kitchen )#TAKING(goal: to the kitchen , theme: the bottle )
+command_2|go to the kitchen and take the water of water in the sofa|MOTION(goal: to the kitchen )#TAKING(goal: in the sofa , theme: the water of water )
